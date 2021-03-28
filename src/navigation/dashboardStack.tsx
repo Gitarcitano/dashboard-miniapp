@@ -11,7 +11,9 @@ const Stack = createStackNavigator<MainStackParams>();
 
 export const DashboardStack: React.FC = () => (
   <NavigationContainer independent={true}>
-    <Stack.Navigator initialRouteName={ScreenNames.DashboardScreen}>
+    <Stack.Navigator
+      initialRouteName={ScreenNames.DashboardScreen}
+      headerMode="none">
       <Stack.Screen name={ScreenNames.DashboardScreen} component={Dashboard} />
       <Stack.Screen
         name={ScreenNames.DashboardDetailScreen}
