@@ -8,12 +8,14 @@ import {DashboardDetails} from '../screens/DashboardDetails';
 
 const Stack = createStackNavigator<MainStackParams>();
 
-export const DashboardStack: React.FC = () => (
-  <>
-    <Stack.Screen name={ScreenNames.DashboardScreen} component={Dashboard} />
-    <Stack.Screen
-      name={ScreenNames.DashboardDetailScreen}
-      component={DashboardDetails}
-    />
-  </>
-);
+export function DashboardStack() {
+  return (
+    <>
+      <Stack.Screen name={ScreenNames.DashboardScreen} component={Dashboard} />
+      <Stack.Screen
+        name={ScreenNames.DashboardDetailScreen}
+        component={DashboardDetails}
+      />
+    </>
+  );
+}
