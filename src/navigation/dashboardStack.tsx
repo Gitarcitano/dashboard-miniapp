@@ -10,7 +10,7 @@ import {NavigationContainer} from '@react-navigation/native';
 const Stack = createStackNavigator<MainStackParams>();
 
 export const DashboardStack: React.FC = () => (
-  <NavigationContainer>
+  <NavigationContainer independent={true}>
     <Stack.Navigator initialRouteName={ScreenNames.DashboardScreen}>
       <Stack.Screen name={ScreenNames.DashboardScreen} component={Dashboard} />
       <Stack.Screen
