@@ -1,10 +1,12 @@
 import React from 'react';
 
 import {DashboardStack} from './navigation/dashboardStack';
+import {IS_ISOLATED} from '@env';
 
-const prop = !!process.env.REACT_IS_ISOLATED;
+const prop = IS_ISOLATED === 'true';
 
 function DashboardMiniApp({isIsolated = prop}) {
+  console.log(prop);
   return <DashboardStack isIsolated={isIsolated} />;
 }
 
