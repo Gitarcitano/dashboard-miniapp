@@ -10,12 +10,12 @@ const Stack = createStackNavigator<MainStackParams>();
 
 export function DashboardStack() {
   return (
-    <>
+    <Stack.Navigator initialRouteName={ScreenNames.DashboardScreen}>
       <Stack.Screen name={ScreenNames.DashboardScreen} component={Dashboard} />
       <Stack.Screen
         name={ScreenNames.DashboardDetailScreen}
         component={DashboardDetails}
       />
-    </>
+    </Stack.Navigator>
   );
 }
