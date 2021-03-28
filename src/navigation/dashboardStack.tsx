@@ -21,7 +21,7 @@ function renderStack(): JSX.Element {
   );
 }
 
-export function DashboardStack({isIsolated = true}) {
+export function DashboardStack({isIsolated = false}) {
   return (
     <>
       {isIsolated && <NavigationContainer>{renderStack()}</NavigationContainer>}
