@@ -5,10 +5,11 @@ import {ScreenNames} from './screenNames';
 import {MainStackParams} from './navigation';
 import {Dashboard} from '../screens/Dashboard';
 import {DashboardDetails} from '../screens/DashboardDetails';
+import {NavigationContainer} from '@react-navigation/native';
 
 const Stack = createStackNavigator<MainStackParams>();
 
-export function DashboardStack() {
+function renderStack(): JSX.Element {
   return (
     <Stack.Navigator initialRouteName={ScreenNames.DashboardScreen}>
       <Stack.Screen name={ScreenNames.DashboardScreen} component={Dashboard} />
@@ -17,5 +18,14 @@ export function DashboardStack() {
         component={DashboardDetails}
       />
     </Stack.Navigator>
+  );
+}
+
+export function DashboardStack({isIsolated = true}) {
+  return (
+    <>
+      {isIsolated && <NavigationContainer>{renderStack()}</NavigationContainer>}
+      {!isIsolated && renderStack()}
+    </>
   );
 }
