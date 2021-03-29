@@ -9,27 +9,19 @@ import {NavigationContainer} from '@react-navigation/native';
 
 const Stack = createStackNavigator<MainStackParams>();
 
-function renderStack(): JSX.Element {
+export function DashboardStack() {
   return (
-    <Stack.Navigator initialRouteName={ScreenNames.DashboardScreen}>
-      <Stack.Screen name={ScreenNames.DashboardScreen} component={Dashboard} />
-      <Stack.Screen
-        name={ScreenNames.DashboardDetailScreen}
-        component={DashboardDetails}
-      />
-    </Stack.Navigator>
-  );
-}
-
-export function DashboardStack({isIsolated = false}) {
-  return (
-    <>
-      {isIsolated && (
-        <NavigationContainer independent={true}>
-          {renderStack()}
-        </NavigationContainer>
-      )}
-      {!isIsolated && renderStack()}
-    </>
+    <NavigationContainer independent={true}>
+      <Stack.Navigator initialRouteName={ScreenNames.DashboardScreen}>
+        <Stack.Screen
+          name={ScreenNames.DashboardScreen}
+          component={Dashboard}
+        />
+        <Stack.Screen
+          name={ScreenNames.DashboardDetailScreen}
+          component={DashboardDetails}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
